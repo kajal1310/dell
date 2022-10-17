@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rainfall-pod
+spec:
+  containers:
+    - name: rainffallapp
+      image: dtest/rainfall
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 8080
+      volumeMounts:
+      - mountPath: /var/config/dtest/
+        name: app-config
+  volumes:
+  - name: app-config
+    configMap:
+      name: app-config
+

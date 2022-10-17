@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  app.properties: |-
+    url=https://api.data.gov.sg/v1/environment/rainfall?date=2022-10-10
+    search_term=Alexandra Road
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: default
